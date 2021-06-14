@@ -1,5 +1,6 @@
 ﻿Public Class AbaLogin
 
+    Public Shared conn As DBConnection
 
 
     Private Sub LoginButton_Click(sender As Object, e As EventArgs) Handles LoginButton.Click
@@ -22,9 +23,10 @@
             MsgBox("Erro na conexão da base de dados")
         Else
             MsgBox("Sucesso na conexão!")
-            Dim aba As New Principal(conn)
+            AbaLogin.conn = conn
+            Dim aba As New Principal()
             aba.Show()
-            Me.Hide()
+            Me.Close()
         End If
 
     End Sub

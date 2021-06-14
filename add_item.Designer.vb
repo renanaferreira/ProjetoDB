@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormArm
+Partial Class add_item
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -24,13 +24,9 @@ Partial Class FormArm
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.codiTB = New System.Windows.Forms.TextBox()
         Me.nomeTB = New System.Windows.Forms.TextBox()
         Me.morTB = New System.Windows.Forms.TextBox()
-        Me.emailTB = New System.Windows.Forms.TextBox()
         Me.telTB = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -38,111 +34,75 @@ Partial Class FormArm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(97, 97)
+        Me.Label1.Location = New System.Drawing.Point(252, 96)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 17)
-        Me.Label1.TabIndex = 0
+        Me.Label1.TabIndex = 21
         Me.Label1.Text = "Nome"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(100, 155)
+        Me.Label2.Location = New System.Drawing.Point(252, 161)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 17)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Morada"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(100, 211)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(42, 17)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Email"
+        Me.Label2.Size = New System.Drawing.Size(71, 17)
+        Me.Label2.TabIndex = 22
+        Me.Label2.Text = "Descrição"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(100, 287)
+        Me.Label4.Location = New System.Drawing.Point(252, 301)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(64, 17)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Telefone"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(97, 50)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(100, 17)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Código Interno"
-        '
-        'codiTB
-        '
-        Me.codiTB.Location = New System.Drawing.Point(348, 50)
-        Me.codiTB.Name = "codiTB"
-        Me.codiTB.ReadOnly = True
-        Me.codiTB.Size = New System.Drawing.Size(100, 22)
-        Me.codiTB.TabIndex = 5
+        Me.Label4.Size = New System.Drawing.Size(45, 17)
+        Me.Label4.TabIndex = 23
+        Me.Label4.Text = "Preço"
         '
         'nomeTB
         '
-        Me.nomeTB.Location = New System.Drawing.Point(348, 97)
+        Me.nomeTB.AcceptsTab = True
+        Me.nomeTB.Location = New System.Drawing.Point(448, 96)
         Me.nomeTB.Name = "nomeTB"
         Me.nomeTB.Size = New System.Drawing.Size(100, 22)
-        Me.nomeTB.TabIndex = 6
+        Me.nomeTB.TabIndex = 25
         '
         'morTB
         '
-        Me.morTB.Location = New System.Drawing.Point(348, 150)
+        Me.morTB.Location = New System.Drawing.Point(448, 156)
         Me.morTB.Name = "morTB"
         Me.morTB.Size = New System.Drawing.Size(100, 22)
-        Me.morTB.TabIndex = 7
-        '
-        'emailTB
-        '
-        Me.emailTB.Location = New System.Drawing.Point(348, 206)
-        Me.emailTB.Name = "emailTB"
-        Me.emailTB.Size = New System.Drawing.Size(100, 22)
-        Me.emailTB.TabIndex = 8
+        Me.morTB.TabIndex = 26
         '
         'telTB
         '
-        Me.telTB.Location = New System.Drawing.Point(348, 282)
+        Me.telTB.Location = New System.Drawing.Point(448, 296)
         Me.telTB.Name = "telTB"
         Me.telTB.Size = New System.Drawing.Size(100, 22)
-        Me.telTB.TabIndex = 9
+        Me.telTB.TabIndex = 28
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(122, 392)
+        Me.Button1.Location = New System.Drawing.Point(390, 381)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 11
-        Me.Button1.Text = "Atualizar"
+        Me.Button1.TabIndex = 29
+        Me.Button1.Text = "Adicionar"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'FormArm
+        'add_item
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.telTB)
-        Me.Controls.Add(Me.emailTB)
         Me.Controls.Add(Me.morTB)
         Me.Controls.Add(Me.nomeTB)
-        Me.Controls.Add(Me.codiTB)
-        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "FormArm"
-        Me.Text = "FormArm"
+        Me.Name = "add_item"
+        Me.Text = "add_item"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -150,13 +110,9 @@ Partial Class FormArm
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents codiTB As TextBox
     Friend WithEvents nomeTB As TextBox
     Friend WithEvents morTB As TextBox
-    Friend WithEvents emailTB As TextBox
     Friend WithEvents telTB As TextBox
     Friend WithEvents Button1 As Button
 End Class

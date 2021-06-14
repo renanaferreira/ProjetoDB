@@ -1,13 +1,6 @@
 ﻿Public Class SSArm
 
-    Dim conn As DBConnection
-
-    Public Sub New(ByRef dbconn As DBConnection)
-        Me.conn = dbconn
-        InitializeComponent()
-    End Sub
-
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MainList.MouseDoubleClick
+    Private Sub select_item(sender As Object, e As EventArgs) Handles MainList.MouseDoubleClick
         If MainList.SelectedItems.Count = 0 Then
             Return
         End If
@@ -19,14 +12,14 @@
         arm.Morada = Convert.ToString(row.SubItems.Item(3).Text)
         arm.Tel = Convert.ToString(row.SubItems.Item(4).Text)
 
-        Dim form_arm As New FormArm(conn, arm)
+        Dim form_arm As New FormArm(arm)
         form_arm.Show()
     End Sub
 
     Private Sub load_arm()
         MainList.Items.Clear()
-        Dim lista As New List(Of Armazem)
-        Me.conn.read_all_arm(lista)
+        Dim lista As New List(Of Object)
+        AbaLogin.conn.read_all_arm(lista)
         For Each item In lista
             Dim listitem As ListViewItem
             listitem = MainList.Items.Add(item.Cod_int)
@@ -42,11 +35,30 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles addBttn.Click
-        Dim addarm As New add_arm(Me.conn)
+        Dim addarm As New add_arm()
         addarm.Show()
     End Sub
 
     Private Sub refreshBTN_Click(sender As Object, e As EventArgs) Handles refreshBTN.Click
         load_arm()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        If MainList.CheckedItems.Count = 0 Then
+            Return
+        End If
+        If MainList.CheckedItems.Count > 1 Then
+            MsgBox("só pode selecionar um por vez")
+            Return
+        End If
+        Dim status As Boolean
+        AbaLogin.conn.delete_arm(MainList.CheckedItems.Item(0).Text, status)
+        If status Then
+            MsgBox("Armazém foi desativado com sucesso")
+            load_arm()
+        Else
+            MsgBox("Erro na desativação do armazém")
+            MainList.SelectedItems.Clear()
+        End If
     End Sub
 End Class

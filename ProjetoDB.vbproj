@@ -85,6 +85,18 @@
     <Compile Include="add_arm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="add_forn.Designer.vb">
+      <DependentUpon>add_forn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="add_forn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_item.Designer.vb">
+      <DependentUpon>add_item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="add_item.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Armazem.vb" />
     <Compile Include="DBConnection.vb" />
     <Compile Include="FormArm.Designer.vb">
@@ -93,6 +105,14 @@
     <Compile Include="FormArm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormForn.Designer.vb">
+      <DependentUpon>FormForn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormForn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedor.vb" />
+    <Compile Include="Item.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -121,6 +141,12 @@
     <Compile Include="SSArm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SSForn.Designer.vb">
+      <DependentUpon>SSForn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SSForn.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AbaLogin.resx">
@@ -129,8 +155,17 @@
     <EmbeddedResource Include="add_arm.resx">
       <DependentUpon>add_arm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="add_forn.resx">
+      <DependentUpon>add_forn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_item.resx">
+      <DependentUpon>add_item.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormArm.resx">
       <DependentUpon>FormArm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormForn.resx">
+      <DependentUpon>FormForn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -143,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SSArm.resx">
       <DependentUpon>SSArm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SSForn.resx">
+      <DependentUpon>SSForn.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
