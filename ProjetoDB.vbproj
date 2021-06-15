@@ -85,6 +85,7 @@
     <Compile Include="add_arm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="add_form.vb" />
     <Compile Include="add_forn.Designer.vb">
       <DependentUpon>add_forn.vb</DependentUpon>
     </Compile>
@@ -109,6 +110,12 @@
       <DependentUpon>FormForn.vb</DependentUpon>
     </Compile>
     <Compile Include="FormForn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormItem.Designer.vb">
+      <DependentUpon>FormItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormItem.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fornecedor.vb" />
@@ -147,6 +154,12 @@
     <Compile Include="SSForn.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SSItem.Designer.vb">
+      <DependentUpon>SSItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SSItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AbaLogin.resx">
@@ -167,6 +180,9 @@
     <EmbeddedResource Include="FormForn.resx">
       <DependentUpon>FormForn.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormItem.resx">
+      <DependentUpon>FormItem.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -181,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SSForn.resx">
       <DependentUpon>SSForn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SSItem.resx">
+      <DependentUpon>SSItem.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
