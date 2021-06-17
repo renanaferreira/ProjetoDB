@@ -85,17 +85,34 @@
     <Compile Include="add_arm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="add_form.vb" />
     <Compile Include="add_forn.Designer.vb">
       <DependentUpon>add_forn.vb</DependentUpon>
     </Compile>
     <Compile Include="add_forn.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="add_func.Designer.vb">
+      <DependentUpon>add_func.vb</DependentUpon>
+    </Compile>
+    <Compile Include="add_func.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="add_item.Designer.vb">
       <DependentUpon>add_item.vb</DependentUpon>
     </Compile>
     <Compile Include="add_item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_loja.Designer.vb">
+      <DependentUpon>add_loja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="add_loja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_pes.Designer.vb">
+      <DependentUpon>add_pes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="add_pes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Armazem.vb" />
@@ -118,8 +135,16 @@
     <Compile Include="FormItem.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormLoja.Designer.vb">
+      <DependentUpon>FormLoja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Fornecedor.vb" />
+    <Compile Include="funcionario.vb" />
     <Compile Include="Item.vb" />
+    <Compile Include="Loja.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -136,10 +161,29 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Pessoa.vb" />
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
     <Compile Include="Principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="select_arm.Designer.vb">
+      <DependentUpon>select_arm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="select_arm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="select_func.Designer.vb">
+      <DependentUpon>select_func.vb</DependentUpon>
+    </Compile>
+    <Compile Include="select_func.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="select_loja.Designer.vb">
+      <DependentUpon>select_loja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="select_loja.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SSArm.Designer.vb">
@@ -154,10 +198,28 @@
     <Compile Include="SSForn.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SSFunc.Designer.vb">
+      <DependentUpon>SSFunc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SSFunc.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SSItem.Designer.vb">
       <DependentUpon>SSItem.vb</DependentUpon>
     </Compile>
     <Compile Include="SSItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SSLoja.Designer.vb">
+      <DependentUpon>SSLoja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SSLoja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SSPes.Designer.vb">
+      <DependentUpon>SSPes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SSPes.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -171,8 +233,17 @@
     <EmbeddedResource Include="add_forn.resx">
       <DependentUpon>add_forn.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="add_func.resx">
+      <DependentUpon>add_func.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="add_item.resx">
       <DependentUpon>add_item.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_loja.resx">
+      <DependentUpon>add_loja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_pes.resx">
+      <DependentUpon>add_pes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormArm.resx">
       <DependentUpon>FormArm.vb</DependentUpon>
@@ -192,14 +263,32 @@
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="select_arm.resx">
+      <DependentUpon>select_arm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="select_func.resx">
+      <DependentUpon>select_func.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="select_loja.resx">
+      <DependentUpon>select_loja.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SSArm.resx">
       <DependentUpon>SSArm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SSForn.resx">
       <DependentUpon>SSForn.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SSFunc.resx">
+      <DependentUpon>SSFunc.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SSItem.resx">
       <DependentUpon>SSItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SSLoja.resx">
+      <DependentUpon>SSLoja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SSPes.resx">
+      <DependentUpon>SSPes.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

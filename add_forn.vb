@@ -1,19 +1,18 @@
 ﻿Public Class add_forn
     Private Sub Add_click(sender As Object, e As EventArgs) Handles Button1.Click
-        If (nomeTB.Text = "" Or descTB.Text = "" Or precoTB.Text = "") Then
+        If (nomeTB.Text = "" Or morTB.Text = "" Or telTB.Text = "") Then
             MsgBox("Campos telefone, email, morada e nif não podem ser vazios")
             Me.clear_editable_tbs()
             Return
         End If
-        Dim ent As New Item
-        Dim status As Boolean
+        Dim ent As New Fornecedor
+        ent.Nif = nifTB.Text
         ent.Nome = nomeTB.Text
-        ent.Desc = descTB.Text
-        ent.Preço = precoTB.Text
-        MsgBox(ent.ToString)
-        AbaLogin.conn.create_item(ent, status)
-        If status Then
-            MsgBox("Fornecedpr foi criado com sucesso!")
+        ent.Morada = morTB.Text
+        ent.Tel = telTB.Text
+        ent.Email = emTB.Text
+        If AbaLogin.conn.execute("create_forn", ent) Then
+            MsgBox("Fornecedor foi criado com sucesso!")
         Else
             MsgBox("Erro na criação do novo Fornecedor!")
         End If
@@ -21,9 +20,11 @@
     End Sub
 
     Private Sub clear_editable_tbs()
-        descTB.Text = ""
-        precoTB.Text = ""
+        morTB.Text = ""
+        telTB.Text = ""
         nomeTB.Text = ""
+        nifTB.Text = ""
+        emTB.Text = ""
     End Sub
 
     Private Sub add_forn_load(sender As Object, e As EventArgs) Handles MyBase.Load

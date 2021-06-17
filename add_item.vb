@@ -1,18 +1,15 @@
 ﻿Public Class add_item
     Private Sub Add_click(sender As Object, e As EventArgs) Handles Button1.Click
-        If (nomeTB.Text = "" Or morTB.Text = "" Or telTB.Text = "") Then
-            MsgBox("Campos não podem ser vazios")
-            Me.clear_editable_tbs()
+        If (nomeTB.Text = "" Or precoTB.Text = "") Then
+            MsgBox("Campos nome e preço não podem ser vazios")
             Return
         End If
         Dim ent As New Item
-        Dim status As Boolean
         ent.Nome = nomeTB.Text
-        ent.Desc = morTB.Text
-        ent.Preço = telTB.Text
-        MsgBox(ent.ToString)
-        AbaLogin.conn.create_item(ent, status)
-        If status Then
+        ent.Descricao = descTB.Text
+        ent.Preço = precoTB.Text
+
+        If AbaLogin.conn.execute("create_item", ent) Then
             MsgBox("item foi criado com sucesso!")
         Else
             MsgBox("Erro na criação do novo item!")
@@ -21,8 +18,8 @@
     End Sub
 
     Private Sub clear_editable_tbs()
-        telTB.Text = ""
-        morTB.Text = ""
+        precoTB.Text = ""
+        descTB.Text = ""
         nomeTB.Text = ""
     End Sub
 

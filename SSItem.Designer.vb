@@ -22,26 +22,14 @@ Partial Class SSItem
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim tel As System.Windows.Forms.ColumnHeader
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.refreshBTN = New System.Windows.Forms.Button()
         Me.addBttn = New System.Windows.Forms.Button()
         Me.MainList = New System.Windows.Forms.ListView()
         Me.cod_int = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.nome = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.email = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.morada = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        tel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.desc = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.preco = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(271, 1)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Fechar"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'refreshBTN
         '
@@ -64,7 +52,7 @@ Partial Class SSItem
         'MainList
         '
         Me.MainList.CheckBoxes = True
-        Me.MainList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.cod_int, Me.nome, Me.email, Me.morada, tel})
+        Me.MainList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.cod_int, Me.nome, Me.preco, Me.desc})
         Me.MainList.FullRowSelect = True
         Me.MainList.HideSelection = False
         Me.MainList.LabelEdit = True
@@ -85,27 +73,21 @@ Partial Class SSItem
         Me.nome.Text = "Nome"
         Me.nome.Width = 72
         '
-        'email
+        'desc
         '
-        Me.email.Text = "Email"
-        Me.email.Width = 78
+        Me.desc.Text = "descrição"
+        Me.desc.Width = 78
         '
-        'morada
+        'preco
         '
-        Me.morada.Text = "Morada"
-        Me.morada.Width = 79
-        '
-        'tel
-        '
-        tel.Text = "Telefone"
-        tel.Width = 88
+        Me.preco.Text = "preço"
+        Me.preco.Width = 79
         '
         'SSItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.refreshBTN)
         Me.Controls.Add(Me.addBttn)
         Me.Controls.Add(Me.MainList)
@@ -114,13 +96,11 @@ Partial Class SSItem
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Button1 As Button
     Friend WithEvents refreshBTN As Button
     Friend WithEvents addBttn As Button
     Friend WithEvents MainList As ListView
     Friend WithEvents cod_int As ColumnHeader
     Friend WithEvents nome As ColumnHeader
-    Friend WithEvents email As ColumnHeader
-    Friend WithEvents morada As ColumnHeader
+    Friend WithEvents desc As ColumnHeader
+    Friend WithEvents preco As ColumnHeader
 End Class

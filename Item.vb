@@ -1,15 +1,34 @@
 ﻿Public Class Item
-    Private _cod_int As Int64
+    Private _codigo_interno As Int64
     Private _nome As String
-    Private _desc As String
+    Private _descricao As String
     Private _preço As Double
 
-    Public Property Cod_int As Long
+    Public Sub New()
+
+    End Sub
+
+    Public Sub New(nome As String, preço As Double, descricao As String)
+        _nome = nome
+        _descricao = descricao
+        _preço = preço
+    End Sub
+
+    Public Sub New(codigo_interno As Long, nome As String, preço As Double, descricao As String)
+        _codigo_interno = codigo_interno
+        _nome = nome
+        _descricao = descricao
+        _preço = preço
+    End Sub
+
+
+
+    Public Property Codigo_interno As Long
         Get
-            Return _cod_int
+            Return _codigo_interno
         End Get
         Set(value As Long)
-            _cod_int = value
+            _codigo_interno = value
         End Set
     End Property
 
@@ -22,12 +41,12 @@
         End Set
     End Property
 
-    Public Property Desc As String
+    Public Property Descricao As String
         Get
-            Return _desc
+            Return _descricao
         End Get
         Set(value As String)
-            _desc = value
+            _descricao = value
         End Set
     End Property
 

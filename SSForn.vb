@@ -20,9 +20,7 @@
 
     Private Sub load()
         MainList.Items.Clear()
-        Dim lista As New List(Of Object)
-        AbaLogin.conn.read_all_forn(lista)
-        For Each item In lista
+        For Each item In AbaLogin.conn.read("read_all_forn")
             Dim listitem As ListViewItem
             listitem = MainList.Items.Add(item.Nif)
             listitem.SubItems.Add(item.Nome)

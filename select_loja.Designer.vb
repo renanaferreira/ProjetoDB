@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class SSArm
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class select_loja
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,35 +20,41 @@ Partial Class SSArm
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim tel As System.Windows.Forms.ColumnHeader
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MainList = New System.Windows.Forms.ListView()
         Me.cod_int = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.nome = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.morada = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.email = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.addBttn = New System.Windows.Forms.Button()
-        Me.refreshBTN = New System.Windows.Forms.Button()
+        Me.morada = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.armazem = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ger = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         tel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
-        'tel
+        'Button1
         '
-        tel.Text = "Telefone"
-        tel.Width = 88
+        Me.Button1.Location = New System.Drawing.Point(26, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(90, 23)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "Selecionar"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'MainList
         '
         Me.MainList.CheckBoxes = True
-        Me.MainList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.cod_int, Me.nome, Me.morada, Me.email, tel})
+        Me.MainList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.cod_int, Me.nome, Me.email, Me.morada, tel, Me.armazem, Me.ger})
         Me.MainList.FullRowSelect = True
         Me.MainList.HideSelection = False
         Me.MainList.LabelEdit = True
-        Me.MainList.Location = New System.Drawing.Point(0, 32)
+        Me.MainList.Location = New System.Drawing.Point(0, 31)
+        Me.MainList.MultiSelect = False
         Me.MainList.Name = "MainList"
         Me.MainList.Size = New System.Drawing.Size(800, 417)
-        Me.MainList.TabIndex = 0
+        Me.MainList.TabIndex = 5
         Me.MainList.UseCompatibleStateImageBehavior = False
         Me.MainList.View = System.Windows.Forms.View.Details
         '
@@ -62,53 +68,48 @@ Partial Class SSArm
         Me.nome.Text = "Nome"
         Me.nome.Width = 72
         '
-        'morada
-        '
-        Me.morada.Text = "Morada"
-        Me.morada.Width = 79
-        '
         'email
         '
         Me.email.Text = "Email"
         Me.email.Width = 78
         '
-        'addBttn
+        'morada
         '
-        Me.addBttn.Location = New System.Drawing.Point(176, 2)
-        Me.addBttn.Name = "addBttn"
-        Me.addBttn.Size = New System.Drawing.Size(88, 26)
-        Me.addBttn.TabIndex = 1
-        Me.addBttn.Text = "Adicionar"
-        Me.addBttn.UseVisualStyleBackColor = True
+        Me.morada.Text = "Morada"
+        Me.morada.Width = 79
         '
-        'refreshBTN
+        'tel
         '
-        Me.refreshBTN.Location = New System.Drawing.Point(95, 2)
-        Me.refreshBTN.Name = "refreshBTN"
-        Me.refreshBTN.Size = New System.Drawing.Size(75, 23)
-        Me.refreshBTN.TabIndex = 2
-        Me.refreshBTN.Text = "Refresh"
-        Me.refreshBTN.UseVisualStyleBackColor = True
+        tel.Text = "Telefone"
+        tel.Width = 88
         '
-        'SSArm
+        'armazem
+        '
+        Me.armazem.Text = "Armazem"
+        '
+        'ger
+        '
+        Me.ger.Text = "Gerente"
+        '
+        'select_loja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.refreshBTN)
-        Me.Controls.Add(Me.addBttn)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.MainList)
-        Me.Name = "SSArm"
-        Me.Text = "Armazéns"
+        Me.Name = "select_loja"
+        Me.Text = "select_loja"
         Me.ResumeLayout(False)
 
     End Sub
 
+    Friend WithEvents Button1 As Button
     Friend WithEvents MainList As ListView
     Friend WithEvents cod_int As ColumnHeader
+    Friend WithEvents nome As ColumnHeader
     Friend WithEvents email As ColumnHeader
     Friend WithEvents morada As ColumnHeader
-    Friend WithEvents nome As ColumnHeader
-    Friend WithEvents addBttn As Button
-    Friend WithEvents refreshBTN As Button
+    Friend WithEvents armazem As ColumnHeader
+    Friend WithEvents ger As ColumnHeader
 End Class

@@ -1,41 +1,43 @@
 ﻿Public Class FormArm
 
-
-    Private arm As Armazem
+    Private _entity As Armazem
     Public Sub New(ByRef arm As Armazem)
-        Me.arm = arm
+        _entity = arm
         InitializeComponent()
     End Sub
 
     Private Sub FormArm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        load()
+        Carregar()
     End Sub
 
-    Private Sub load()
-        codiTB.Text = Me.arm.Cod_int
-        morTB.Text = Me.arm.Morada
-        emailTB.Text = Me.arm.Email
-        nomeTB.Text = Me.arm.Nome
-        telTB.Text = Me.arm.Tel
+    Private Sub Carregar()
+        codiTB.Text = Me._entity.Cod_int
+        morTB.Text = Me._entity.Morada
+        emailTB.Text = Me._entity.Email
+        nomeTB.Text = Me._entity.Nome
+        telTB.Text = Me._entity.Tel
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim newarm As New Armazem()
-        newarm.Cod_int = arm.Cod_int
-        newarm.Email = emailTB.Text
-        newarm.Morada = morTB.Text
-        newarm.Tel = telTB.Text
-        newarm.Nome = nomeTB.Text
-
-        Dim status As Boolean
-        AbaLogin.conn.update_arm(status, newarm)
-        If status = True Then
+    Private Sub Atualizar(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim ent As New Armazem(_entity.Cod_int, nomeTB.Text, morTB.Text, emailTB.Text, telTB.Text)
+        If AbaLogin.conn.execute("update_arm", ent) Then
             MsgBox("Atualização feita com sucesso!")
-            arm = newarm
+            _entity = ent
         Else
             MsgBox("Erro na atualização")
         End If
-        load()
+        Carregar()
 
+    End Sub
+
+    Private Sub Inativar(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim ent As New Armazem(_entity.Cod_int)
+        If AbaLogin.conn.execute("inactivate_arm", ent) Then
+            MsgBox("Entidade foi desativada com sucesso")
+            Close()
+        Else
+            MsgBox("Erro na desativação da Entidade")
+            Carregar()
+        End If
     End Sub
 End Class

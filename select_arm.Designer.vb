@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class SSArm
+Partial Class select_arm
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -26,10 +26,9 @@ Partial Class SSArm
         Me.MainList = New System.Windows.Forms.ListView()
         Me.cod_int = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.nome = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.morada = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.email = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.addBttn = New System.Windows.Forms.Button()
-        Me.refreshBTN = New System.Windows.Forms.Button()
+        Me.morada = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Button1 = New System.Windows.Forms.Button()
         tel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
@@ -41,14 +40,15 @@ Partial Class SSArm
         'MainList
         '
         Me.MainList.CheckBoxes = True
-        Me.MainList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.cod_int, Me.nome, Me.morada, Me.email, tel})
+        Me.MainList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.cod_int, Me.nome, Me.email, Me.morada, tel})
         Me.MainList.FullRowSelect = True
         Me.MainList.HideSelection = False
         Me.MainList.LabelEdit = True
-        Me.MainList.Location = New System.Drawing.Point(0, 32)
+        Me.MainList.Location = New System.Drawing.Point(1, 34)
+        Me.MainList.MultiSelect = False
         Me.MainList.Name = "MainList"
         Me.MainList.Size = New System.Drawing.Size(800, 417)
-        Me.MainList.TabIndex = 0
+        Me.MainList.TabIndex = 1
         Me.MainList.UseCompatibleStateImageBehavior = False
         Me.MainList.View = System.Windows.Forms.View.Details
         '
@@ -62,53 +62,42 @@ Partial Class SSArm
         Me.nome.Text = "Nome"
         Me.nome.Width = 72
         '
-        'morada
-        '
-        Me.morada.Text = "Morada"
-        Me.morada.Width = 79
-        '
         'email
         '
         Me.email.Text = "Email"
         Me.email.Width = 78
         '
-        'addBttn
+        'morada
         '
-        Me.addBttn.Location = New System.Drawing.Point(176, 2)
-        Me.addBttn.Name = "addBttn"
-        Me.addBttn.Size = New System.Drawing.Size(88, 26)
-        Me.addBttn.TabIndex = 1
-        Me.addBttn.Text = "Adicionar"
-        Me.addBttn.UseVisualStyleBackColor = True
+        Me.morada.Text = "Morada"
+        Me.morada.Width = 79
         '
-        'refreshBTN
+        'Button1
         '
-        Me.refreshBTN.Location = New System.Drawing.Point(95, 2)
-        Me.refreshBTN.Name = "refreshBTN"
-        Me.refreshBTN.Size = New System.Drawing.Size(75, 23)
-        Me.refreshBTN.TabIndex = 2
-        Me.refreshBTN.Text = "Refresh"
-        Me.refreshBTN.UseVisualStyleBackColor = True
+        Me.Button1.Location = New System.Drawing.Point(27, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(90, 23)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Selecionar"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'SSArm
+        'select_arm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.refreshBTN)
-        Me.Controls.Add(Me.addBttn)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.MainList)
-        Me.Name = "SSArm"
-        Me.Text = "Armazéns"
+        Me.Name = "select_arm"
+        Me.Text = "select_arm"
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents MainList As ListView
     Friend WithEvents cod_int As ColumnHeader
+    Friend WithEvents nome As ColumnHeader
     Friend WithEvents email As ColumnHeader
     Friend WithEvents morada As ColumnHeader
-    Friend WithEvents nome As ColumnHeader
-    Friend WithEvents addBttn As Button
-    Friend WithEvents refreshBTN As Button
+    Friend WithEvents Button1 As Button
 End Class

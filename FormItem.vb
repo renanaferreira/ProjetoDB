@@ -8,22 +8,19 @@
     End Sub
 
     Private Sub load()
-        ciTB.Text = ent.Cod_int
-        descTB.Text = ent.Desc
+        ciTB.Text = ent.Codigo_interno
+        descTB.Text = ent.Descricao
         preçoTB.Text = ent.Preço
         nomeTB.Text = ent.Nome
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ent As New Item
-        ent.Cod_int = Me.ent.Cod_int
+        ent.Codigo_interno = Me.ent.Codigo_interno
         ent.Nome = nomeTB.Text
         ent.Preço = preçoTB.Text
-        ent.Desc = descTB.Text
-
-        Dim status As Boolean
-        AbaLogin.conn.update_item(status, ent)
-        If status = True Then
+        ent.Descricao = descTB.Text
+        If AbaLogin.conn.execute("update_item", ent) Then
             MsgBox("Atualização feita com sucesso!")
             Me.ent = ent
         Else

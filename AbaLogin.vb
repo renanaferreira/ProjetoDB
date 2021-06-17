@@ -3,6 +3,7 @@
     Public Shared conn As DBConnection
 
 
+
     Private Sub LoginButton_Click(sender As Object, e As EventArgs) Handles LoginButton.Click
         If UserTextBox.Text = "" Or PassTextBox.Text = "" Then
             MsgBox("Campo utilizador e Senha não podem ser vazios")

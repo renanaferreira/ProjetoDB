@@ -7,6 +7,31 @@
     Private _nome As String
     Private _ativo As Boolean
 
+    Public Sub New()
+
+    End Sub
+
+    Public Sub New(cod_int As Long)
+        Me.Cod_int = cod_int
+    End Sub
+    Public Sub New(cod_int As Long, nome As String, morada As String, email As String, tel As String)
+        Me.Morada = morada
+        Me.Tel = tel
+        Me.Email = email
+        Me.Cod_int = cod_int
+        Me.Nome = nome
+        Me.Ativo = Ativo
+    End Sub
+
+    Public ReadOnly Property Id As String
+        Get
+            If _cod_int = -1 Then
+                Return ""
+            End If
+            Return Convert.ToString(_cod_int)
+        End Get
+    End Property
+
     Public Property Morada As String
         Get
             Return _morada

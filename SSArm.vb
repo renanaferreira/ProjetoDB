@@ -1,66 +1,54 @@
 ﻿Public Class SSArm
 
-    Private Sub select_item(sender As Object, e As EventArgs) Handles MainList.MouseDoubleClick
+    Private Sub Selecionar(sender As Object, e As EventArgs) Handles MainList.MouseDoubleClick
         If MainList.SelectedItems.Count = 0 Then
             Return
         End If
-        Dim row As ListViewItem = MainList.SelectedItems.Item(0)
-        Dim arm As New Armazem
-        arm.Cod_int = Convert.ToInt32(row.Text)
-        arm.Nome = Convert.ToString(row.SubItems.Item(1).Text)
-        arm.Email = Convert.ToString(row.SubItems.Item(2).Text)
-        arm.Morada = Convert.ToString(row.SubItems.Item(3).Text)
-        arm.Tel = Convert.ToString(row.SubItems.Item(4).Text)
-
-        Dim form_arm As New FormArm(arm)
-        form_arm.Show()
+        Dim ent As Object
+        New_item(ent)
+        Dim form As New FormArm(ent)
+        form.Show()
     End Sub
 
-    Private Sub load_arm()
+    Private Sub Carregar(tipo As String)
         MainList.Items.Clear()
-        Dim lista As New List(Of Object)
-        AbaLogin.conn.read_all_arm(lista)
-        For Each item In lista
-            Dim listitem As ListViewItem
-            listitem = MainList.Items.Add(item.Cod_int)
-            listitem.SubItems.Add(item.Nome)
-            listitem.SubItems.Add(item.Email)
-            listitem.SubItems.Add(item.Morada)
-            listitem.SubItems.Add(item.Tel)
+        For Each item In AbaLogin.conn.read(tipo)
+            Read_item(item)
         Next
     End Sub
 
+    Private Sub New_item(ByRef item As Object)
+        Dim row As ListViewItem = MainList.SelectedItems.Item(0)
+        Dim ent As New Armazem(
+            Convert.ToInt64(row.Text),
+            row.SubItems.Item(1).Text,
+            row.SubItems.Item(2).Text,
+            row.SubItems.Item(3).Text,
+            row.SubItems.Item(4).Text
+        )
+
+    End Sub
+
+    Private Sub Read_item(ByRef item As Object)
+        Dim listitem As ListViewItem
+        listitem = MainList.Items.Add(item.Cod_int)
+        listitem.SubItems.Add(item.Nome)
+        listitem.SubItems.Add(item.Morada)
+        listitem.SubItems.Add(item.Email)
+        listitem.SubItems.Add(item.Tel)
+    End Sub
+
     Private Sub SSArm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        load_arm()
+        Carregar("read_all_arm")
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles addBttn.Click
-        Dim addarm As New add_arm()
-        addarm.Show()
+    Private Sub FormEntidade(sender As Object, e As EventArgs) Handles addBttn.Click
+        Dim form As New add_arm()
+        form.Show()
     End Sub
 
-    Private Sub refreshBTN_Click(sender As Object, e As EventArgs) Handles refreshBTN.Click
-        load_arm()
+    Private Sub Recarregar(sender As Object, e As EventArgs) Handles refreshBTN.Click
+        Carregar("read_all_arm")
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        If MainList.CheckedItems.Count = 0 Then
-            Return
-        End If
-        If MainList.CheckedItems.Count > 1 Then
-            MsgBox("só pode selecionar um por vez")
-            Return
-        End If
-        Dim arm As New Armazem
-        arm.Cod_int = MainList.CheckedItems.Item(0).Text
-        Dim status As Boolean
-        AbaLogin.conn.inactivate_arm(arm, status)
-        If status Then
-            MsgBox("Entidade foi desativada com sucesso")
-            load_arm()
-        Else
-            MsgBox("Erro na desativação da Entidade")
-            MainList.SelectedItems.Clear()
-        End If
-    End Sub
 End Class

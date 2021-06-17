@@ -26,8 +26,8 @@ Partial Class add_item
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.nomeTB = New System.Windows.Forms.TextBox()
-        Me.morTB = New System.Windows.Forms.TextBox()
-        Me.telTB = New System.Windows.Forms.TextBox()
+        Me.descTB = New System.Windows.Forms.TextBox()
+        Me.precoTB = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -66,19 +66,19 @@ Partial Class add_item
         Me.nomeTB.Size = New System.Drawing.Size(100, 22)
         Me.nomeTB.TabIndex = 25
         '
-        'morTB
+        'descTB
         '
-        Me.morTB.Location = New System.Drawing.Point(448, 156)
-        Me.morTB.Name = "morTB"
-        Me.morTB.Size = New System.Drawing.Size(100, 22)
-        Me.morTB.TabIndex = 26
+        Me.descTB.Location = New System.Drawing.Point(448, 156)
+        Me.descTB.Name = "descTB"
+        Me.descTB.Size = New System.Drawing.Size(100, 22)
+        Me.descTB.TabIndex = 26
         '
-        'telTB
+        'precoTB
         '
-        Me.telTB.Location = New System.Drawing.Point(448, 296)
-        Me.telTB.Name = "telTB"
-        Me.telTB.Size = New System.Drawing.Size(100, 22)
-        Me.telTB.TabIndex = 28
+        Me.precoTB.Location = New System.Drawing.Point(448, 296)
+        Me.precoTB.Name = "precoTB"
+        Me.precoTB.Size = New System.Drawing.Size(100, 22)
+        Me.precoTB.TabIndex = 28
         '
         'Button1
         '
@@ -95,8 +95,8 @@ Partial Class add_item
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.telTB)
-        Me.Controls.Add(Me.morTB)
+        Me.Controls.Add(Me.precoTB)
+        Me.Controls.Add(Me.descTB)
         Me.Controls.Add(Me.nomeTB)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label2)
@@ -112,7 +112,7 @@ Partial Class add_item
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents nomeTB As TextBox
-    Friend WithEvents morTB As TextBox
-    Friend WithEvents telTB As TextBox
+    Friend WithEvents descTB As TextBox
+    Friend WithEvents precoTB As TextBox
     Friend WithEvents Button1 As Button
 End Class

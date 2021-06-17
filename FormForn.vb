@@ -1,40 +1,32 @@
 ﻿Public Class FormForn
-    Private forn As Fornecedor
+    Private _forn As Fornecedor
 
     Public Sub New(ByRef forn As Fornecedor)
-        Me.forn = forn
+        Me._forn = forn
         InitializeComponent()
     End Sub
 
-    Private Sub load()
-        nifTB.Text = forn.Nif
-        morTB.Text = forn.Morada
-        emailTB.Text = forn.Email
-        nomeTB.Text = forn.Nome
-        telTB.Text = forn.Tel
+    Private Sub Carregar()
+        nifTB.Text = _forn.Nif
+        morTB.Text = _forn.Morada
+        emailTB.Text = _forn.Email
+        nomeTB.Text = _forn.Nome
+        telTB.Text = _forn.Tel
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim newforn As New Fornecedor
-        newforn.Nif = forn.Nif
-        newforn.Email = emailTB.Text
-        newforn.Morada = morTB.Text
-        newforn.Tel = telTB.Text
-        newforn.Nome = nomeTB.Text
-
-        Dim status As Boolean
-        AbaLogin.conn.update_forn(status, newforn)
-        If status = True Then
+    Private Sub Update(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim ent As New Fornecedor(_forn.Nif, nomeTB.Text, morTB.Text, emailTB.Text, telTB.Text)
+        If AbaLogin.conn.execute("update_forn", ent) Then
             MsgBox("Atualização feita com sucesso!")
-            forn = newforn
+            _forn = ent
         Else
             MsgBox("Erro na atualização")
         End If
-        load()
+        Carregar()
 
     End Sub
 
     Private Sub FormForn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        load()
+        Carregar()
     End Sub
 End Class
