@@ -47,6 +47,27 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>ProjetoDB.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>ProjetoDB.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -79,44 +100,73 @@
     <Compile Include="AbaLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="add_arm.Designer.vb">
-      <DependentUpon>add_arm.vb</DependentUpon>
+    <Compile Include="AddAba.vb" />
+    <Compile Include="AddArm.Designer.vb">
+      <DependentUpon>AddArm.vb</DependentUpon>
     </Compile>
-    <Compile Include="add_arm.vb">
+    <Compile Include="AddArm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="add_forn.Designer.vb">
-      <DependentUpon>add_forn.vb</DependentUpon>
+    <Compile Include="AddDevCliFunc.Designer.vb">
+      <DependentUpon>AddDevCliFunc.vb</DependentUpon>
     </Compile>
-    <Compile Include="add_forn.vb">
+    <Compile Include="AddDevCliFunc.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="add_func.Designer.vb">
-      <DependentUpon>add_func.vb</DependentUpon>
+    <Compile Include="AddEntArmLoja.Designer.vb">
+      <DependentUpon>AddEntArmLoja.vb</DependentUpon>
     </Compile>
-    <Compile Include="add_func.vb">
+    <Compile Include="AddEntArmLoja.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="add_item.Designer.vb">
-      <DependentUpon>add_item.vb</DependentUpon>
+    <Compile Include="AddEntFornArm.Designer.vb">
+      <DependentUpon>AddEntFornArm.vb</DependentUpon>
     </Compile>
-    <Compile Include="add_item.vb">
+    <Compile Include="AddEntFornArm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="add_loja.Designer.vb">
-      <DependentUpon>add_loja.vb</DependentUpon>
+    <Compile Include="AddForn.Designer.vb">
+      <DependentUpon>AddForn.vb</DependentUpon>
     </Compile>
-    <Compile Include="add_loja.vb">
+    <Compile Include="AddForn.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="add_pes.Designer.vb">
-      <DependentUpon>add_pes.vb</DependentUpon>
+    <Compile Include="AddFunc.Designer.vb">
+      <DependentUpon>AddFunc.vb</DependentUpon>
     </Compile>
-    <Compile Include="add_pes.vb">
+    <Compile Include="AddFunc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddItem.Designer.vb">
+      <DependentUpon>AddItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLoja.Designer.vb">
+      <DependentUpon>AddLoja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddLoja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPes.Designer.vb">
+      <DependentUpon>AddPes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddPes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVendaFuncCli.Designer.vb">
+      <DependentUpon>AddVendaFuncCli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddVendaFuncCli.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Armazem.vb" />
     <Compile Include="DBConnection.vb" />
+    <Compile Include="Devolucao_cli_func.vb" />
+    <Compile Include="Entrega_arm_loja.vb" />
+    <Compile Include="Entrega_forn_arm.vb" />
+    <Compile Include="FormAba.vb" />
     <Compile Include="FormArm.Designer.vb">
       <DependentUpon>FormArm.vb</DependentUpon>
     </Compile>
@@ -127,6 +177,12 @@
       <DependentUpon>FormForn.vb</DependentUpon>
     </Compile>
     <Compile Include="FormForn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFunc.Designer.vb">
+      <DependentUpon>FormFunc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormFunc.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormItem.Designer.vb">
@@ -141,9 +197,17 @@
     <Compile Include="FormLoja.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormPes.Designer.vb">
+      <DependentUpon>FormPes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Fornecedor.vb" />
     <Compile Include="funcionario.vb" />
+    <Compile Include="InactivateEntity.vb" />
     <Compile Include="Item.vb" />
+    <Compile Include="Item_qt.vb" />
     <Compile Include="Loja.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -168,28 +232,70 @@
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="select_arm.Designer.vb">
-      <DependentUpon>select_arm.vb</DependentUpon>
+    <Compile Include="SelectArm.Designer.vb">
+      <DependentUpon>SelectArm.vb</DependentUpon>
     </Compile>
-    <Compile Include="select_arm.vb">
+    <Compile Include="SelectArm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="select_func.Designer.vb">
-      <DependentUpon>select_func.vb</DependentUpon>
+    <Compile Include="SelectForn.Designer.vb">
+      <DependentUpon>SelectForn.vb</DependentUpon>
     </Compile>
-    <Compile Include="select_func.vb">
+    <Compile Include="SelectForn.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="select_loja.Designer.vb">
-      <DependentUpon>select_loja.vb</DependentUpon>
+    <Compile Include="SelectFunc.Designer.vb">
+      <DependentUpon>SelectFunc.vb</DependentUpon>
     </Compile>
-    <Compile Include="select_loja.vb">
+    <Compile Include="SelectFunc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectItem.Designer.vb">
+      <DependentUpon>SelectItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectLoja.Designer.vb">
+      <DependentUpon>SelectLoja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectLoja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectPes.Designer.vb">
+      <DependentUpon>SelectPes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectPes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectTemplate.Designer.vb">
+      <DependentUpon>SelectTemplate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectTemplate.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SSArm.Designer.vb">
       <DependentUpon>SSArm.vb</DependentUpon>
     </Compile>
     <Compile Include="SSArm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SSDevCliFunc.Designer.vb">
+      <DependentUpon>SSDevCliFunc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SSDevCliFunc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SSEntArmLoja.Designer.vb">
+      <DependentUpon>SSEntArmLoja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SSEntArmLoja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SSEntregaFornArm.Designer.vb">
+      <DependentUpon>SSEntregaFornArm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SSEntregaFornArm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SSForn.Designer.vb">
@@ -222,28 +328,42 @@
     <Compile Include="SSPes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SSTemplate.Designer.vb">
+      <DependentUpon>SSTemplate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SSTemplate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SSVendaFuncCli.Designer.vb">
+      <DependentUpon>SSVendaFuncCli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SSVendaFuncCli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValorRetorno.vb" />
+    <Compile Include="Venda_func_cliente.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AbaLogin.resx">
       <DependentUpon>AbaLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="add_arm.resx">
-      <DependentUpon>add_arm.vb</DependentUpon>
+    <EmbeddedResource Include="AddArm.resx">
+      <DependentUpon>AddArm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="add_forn.resx">
-      <DependentUpon>add_forn.vb</DependentUpon>
+    <EmbeddedResource Include="AddForn.resx">
+      <DependentUpon>AddForn.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="add_func.resx">
-      <DependentUpon>add_func.vb</DependentUpon>
+    <EmbeddedResource Include="AddFunc.resx">
+      <DependentUpon>AddFunc.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="add_item.resx">
-      <DependentUpon>add_item.vb</DependentUpon>
+    <EmbeddedResource Include="AddItem.resx">
+      <DependentUpon>AddItem.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="add_loja.resx">
-      <DependentUpon>add_loja.vb</DependentUpon>
+    <EmbeddedResource Include="AddLoja.resx">
+      <DependentUpon>AddLoja.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="add_pes.resx">
-      <DependentUpon>add_pes.vb</DependentUpon>
+    <EmbeddedResource Include="AddPes.resx">
+      <DependentUpon>AddPes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormArm.resx">
       <DependentUpon>FormArm.vb</DependentUpon>
@@ -251,8 +371,17 @@
     <EmbeddedResource Include="FormForn.resx">
       <DependentUpon>FormForn.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFunc.resx">
+      <DependentUpon>FormFunc.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormItem.resx">
       <DependentUpon>FormItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoja.resx">
+      <DependentUpon>FormLoja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPes.resx">
+      <DependentUpon>FormPes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -263,32 +392,11 @@
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="select_arm.resx">
-      <DependentUpon>select_arm.vb</DependentUpon>
+    <EmbeddedResource Include="SelectTemplate.resx">
+      <DependentUpon>SelectTemplate.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="select_func.resx">
-      <DependentUpon>select_func.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="select_loja.resx">
-      <DependentUpon>select_loja.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SSArm.resx">
-      <DependentUpon>SSArm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SSForn.resx">
-      <DependentUpon>SSForn.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SSFunc.resx">
-      <DependentUpon>SSFunc.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SSItem.resx">
-      <DependentUpon>SSItem.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SSLoja.resx">
-      <DependentUpon>SSLoja.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SSPes.resx">
-      <DependentUpon>SSPes.vb</DependentUpon>
+    <EmbeddedResource Include="SSTemplate.resx">
+      <DependentUpon>SSTemplate.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

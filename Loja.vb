@@ -23,7 +23,7 @@
         _cod_int_ger = cod_int_ger
     End Sub
 
-    Public Sub New(cod_int As Long, nome As String, morada As String, email As String, telefone As String, cod_int_arm As Long, cod_int_ger As Long)
+    Public Sub New(cod_int As Long, nome As String, morada As String, email As String, telefone As String, cod_int_arm As Long, Optional ByVal cod_int_ger As Long = -1)
         _cod_int = cod_int
         _nome = nome
         _morada = morada

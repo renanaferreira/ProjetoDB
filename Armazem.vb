@@ -8,29 +8,26 @@
     Private _ativo As Boolean
 
     Public Sub New()
-
     End Sub
 
+    'reference
     Public Sub New(cod_int As Long)
         Me.Cod_int = cod_int
     End Sub
+
+    'read
     Public Sub New(cod_int As Long, nome As String, morada As String, email As String, tel As String)
+        Me.New(nome, morada, email, tel)
+        Me.Cod_int = cod_int
+    End Sub
+
+    'create
+    Public Sub New(nome As String, morada As String, email As String, tel As String)
         Me.Morada = morada
         Me.Tel = tel
         Me.Email = email
-        Me.Cod_int = cod_int
         Me.Nome = nome
-        Me.Ativo = Ativo
     End Sub
-
-    Public ReadOnly Property Id As String
-        Get
-            If _cod_int = -1 Then
-                Return ""
-            End If
-            Return Convert.ToString(_cod_int)
-        End Get
-    End Property
 
     Public Property Morada As String
         Get

@@ -31,6 +31,7 @@ Partial Class FormItem
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -76,9 +77,9 @@ Partial Class FormItem
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(225, 43)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(29, 17)
+        Me.Label5.Size = New System.Drawing.Size(100, 17)
         Me.Label5.TabIndex = 27
-        Me.Label5.Text = "NIF"
+        Me.Label5.Text = "Código Interno"
         '
         'Label3
         '
@@ -107,11 +108,21 @@ Partial Class FormItem
         Me.Label1.TabIndex = 23
         Me.Label1.Text = "Nome"
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(446, 385)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 34
+        Me.Button2.Text = "Inativar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'FormItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.preçoTB)
         Me.Controls.Add(Me.descTB)
@@ -137,4 +148,5 @@ Partial Class FormItem
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button2 As Button
 End Class

@@ -1,45 +1,44 @@
 ﻿Public Class SSForn
 
-
-    Private Sub select_item(sender As Object, e As EventArgs) Handles MainList.MouseDoubleClick
-        If MainList.SelectedItems.Count = 0 Then
-            Return
-        End If
-        Dim row As ListViewItem = MainList.SelectedItems.Item(0)
-        Dim forn As New Fornecedor
-        forn.Nif = Convert.ToString(row.Text)
-        forn.Nome = Convert.ToString(row.SubItems.Item(1).Text)
-        forn.Email = Convert.ToString(row.SubItems.Item(2).Text)
-        forn.Morada = Convert.ToString(row.SubItems.Item(3).Text)
-        forn.Tel = Convert.ToString(row.SubItems.Item(4).Text)
-        MsgBox(forn.ToString)
-
-        Dim form_arm As New FormForn(forn)
-        form_arm.Show()
+    Public Overrides Sub Read_item(item As Object)
+        Dim ent As Fornecedor = CType(item, Fornecedor)
+        Dim listitem As ListViewItem = MainList.Items.Add(ent.Nif)
+        listitem.SubItems.Add(ent.Nome)
+        listitem.SubItems.Add(ent.Morada)
+        listitem.SubItems.Add(ent.Email)
+        listitem.SubItems.Add(ent.Tel)
     End Sub
 
-    Private Sub load()
-        MainList.Items.Clear()
-        For Each item In AbaLogin.conn.read("read_all_forn")
-            Dim listitem As ListViewItem
-            listitem = MainList.Items.Add(item.Nif)
-            listitem.SubItems.Add(item.Nome)
-            listitem.SubItems.Add(item.Email)
-            listitem.SubItems.Add(item.Morada)
-            listitem.SubItems.Add(item.Tel)
-        Next
+    Public Overrides Sub SetColumns()
+        MainList.Columns.Add("Nif")
+        MainList.Columns.Add("Nome")
+        MainList.Columns.Add("Morada")
+        MainList.Columns.Add("Email")
+        MainList.Columns.Add("Telefone")
     End Sub
 
-    Private Sub SSForn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        load()
-    End Sub
+    Public Overrides Function EntShow(ByRef item As Object) As Form
+        item = CType(item, Fornecedor)
+        Return New FormForn(item)
+    End Function
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim add As New add_forn
-        add.Show()
-    End Sub
+    Public Overrides Function New_item() As Object
+        Dim row = MainList.SelectedItems.Item(0)
+        Return New Fornecedor(
+            row.Text,
+            row.SubItems.Item(1).Text,
+            row.SubItems.Item(2).Text,
+            row.SubItems.Item(3).Text,
+            row.SubItems.Item(4).Text
+)
+    End Function
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        load()
-    End Sub
+    Public Overrides Function Tipo() As String
+        Return "fornecedor"
+    End Function
+
+    Public Overrides Function GetAddAba() As Form
+        Return New AddForn()
+    End Function
+
 End Class

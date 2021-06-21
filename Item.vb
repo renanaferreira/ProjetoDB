@@ -8,6 +8,10 @@
 
     End Sub
 
+    Public Sub New(cod_int As Long)
+        Me.Cod_int = cod_int
+    End Sub
+
     Public Sub New(nome As String, preço As Double, descricao As String)
         _nome = nome
         _descricao = descricao
@@ -23,7 +27,7 @@
 
 
 
-    Public Property Codigo_interno As Long
+    Public Property Cod_int As Long
         Get
             Return _codigo_interno
         End Get

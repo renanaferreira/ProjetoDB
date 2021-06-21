@@ -1,45 +1,57 @@
 ﻿Public Class SSLoja
-
-    Private Sub Selecionar(sender As Object, e As EventArgs) Handles MainList.MouseDoubleClick
-        If MainList.SelectedItems.Count = 0 Then
-            Return
+    Public Overrides Sub Read_item(item As Object)
+        Dim ent As Loja = CType(item, Loja)
+        Dim listitem As ListViewItem = MainList.Items.Add(ent.Cod_int)
+        listitem.SubItems.Add(ent.Nome)
+        listitem.SubItems.Add(ent.Morada)
+        listitem.SubItems.Add(ent.Email)
+        listitem.SubItems.Add(ent.Tel)
+        listitem.SubItems.Add(ent.Cod_int_arm)
+        If ent.Cod_int_ger <> -1 Then
+            listitem.SubItems.Add(ent.Cod_int_ger)
+        Else
+            listitem.SubItems.Add("")
         End If
-        Dim row As ListViewItem = MainList.SelectedItems.Item(0)
-        Dim ent As New Loja(
-        Convert.ToInt64(row.Text),
-        row.SubItems.Item(1).Text,
-        row.SubItems.Item(3).Text,
-        row.SubItems.Item(2).Text,
-        row.SubItems.Item(4).Text,
-        Convert.ToInt64(row.SubItems.Item(5).Text),
-        Convert.ToInt64(row.SubItems.Item(6).Text))
-        'Dim form_arm As New FormLoja(ent)
-        'form_arm.Show()
+
     End Sub
 
-
-    Public Sub Carregar(tipo As String)
-        MainList.Items.Clear()
-        For Each item In AbaLogin.conn.read(tipo)
-            Dim listitem As ListViewItem
-            listitem = MainList.Items.Add(item.Cod_int)
-            listitem.SubItems.Add(item.Nome)
-            listitem.SubItems.Add(item.Email)
-            listitem.SubItems.Add(item.Morada)
-            listitem.SubItems.Add(item.Tel)
-        Next
+    Public Overrides Sub SetColumns()
+        MainList.Columns.Add("Código Interno")
+        MainList.Columns.Add("Nome")
+        MainList.Columns.Add("Morada")
+        MainList.Columns.Add("Email")
+        MainList.Columns.Add("Telefone")
+        MainList.Columns.Add("Código do Armazém")
+        MainList.Columns.Add("Código do Gerente")
     End Sub
 
-    Private Sub SSLoja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Carregar("read_all_loja")
-    End Sub
+    Public Overrides Function EntShow(ByRef item As Object) As Form
+        item = CType(item, Loja)
+        Return New FormLoja(item)
+    End Function
 
-    Private Sub Recarregar(sender As Object, e As EventArgs) Handles refreshBTN.Click
-        Carregar("read_all_loja")
-    End Sub
+    Public Overrides Function New_item() As Object
+        Dim row = MainList.SelectedItems.Item(0)
+        Dim cod_int_ger = row.SubItems.Item(6).Text
+        If cod_int_ger = "" Then
+            cod_int_ger = "-1"
+        End If
+        Return New Loja(
+            Convert.ToInt64(row.Text),
+            row.SubItems.Item(1).Text,
+            row.SubItems.Item(2).Text,
+            row.SubItems.Item(3).Text,
+            row.SubItems.Item(4).Text,
+            Convert.ToInt64(row.SubItems.Item(5).Text),
+            Convert.ToInt64(cod_int_ger)
+        )
+    End Function
 
-    Private Sub FormEntidade(sender As Object, e As EventArgs) Handles addBttn.Click
-        Dim aba As New add_loja
-        aba.Show()
-    End Sub
+    Public Overrides Function Tipo() As String
+        Return "loja"
+    End Function
+
+    Public Overrides Function GetAddAba() As Form
+        Return New AddLoja()
+    End Function
 End Class
